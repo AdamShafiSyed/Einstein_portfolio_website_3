@@ -1,4 +1,6 @@
-fetch("https://upadhayay.github.io/db.json")
+document.addEventListener( "DOMContentLoaded", getBooks());
+function getBooks(){
+    fetch("https://upadhayay.github.io/db.json")
 .then(function (response) {
     return response.json();
 })
@@ -16,3 +18,4 @@ fetch("https://upadhayay.github.io/db.json")
 
     placeholder.innerHTML = out;
 });
+}
