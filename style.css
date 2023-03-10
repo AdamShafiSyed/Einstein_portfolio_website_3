@@ -1,0 +1,263 @@
+body{
+     font-size: 18px;
+     font-family: 'Times New Roman', Times, serif;
+     margin: 0;
+     padding: 0;
+ }
+ .background-image
+{
+    background-color: beige;
+}
+ 
+ .container {
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr;
+     grid-template-rows: 0.1fr 1fr 1fr 1fr 1fr 1fr 1fr 0.5fr;
+     grid-template-areas: 
+     "topnav topnav topnav" 
+     "aboutme info info" 
+     "experience experience experience"
+     "papers papers papers"  
+     "hobbies hobbies hobbies"  
+     "blogs blogs blogs"
+     "contact contact contact";
+     grid-gap: 0.5rem;
+     grid-template-rows: 100px;
+     /* padding: 0px 15px; */
+     
+ }
+ #experience{
+    grid-area: experience;
+    padding: 15px;
+ }
+ #experience ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+ }
+ #experience ul li {
+    line-height: 25px;
+ }
+ #menuToggle {
+    display: block;
+    position: relative;
+    top: 30px;
+    left: 0px;  
+    z-index: 1;  
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+     -ms-user-select: none;
+         user-select: none;
+  }
+  
+  #menuToggle a {
+    text-decoration: none;
+    color: #232323;
+
+  }
+  
+  #menuToggle a:hover {
+    color: #20a04d;
+  }
+  
+  #menuToggle input {
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;  
+    padding: 0;
+    cursor:context-menu;  
+    opacity: 0;
+    z-index: 2; 
+    -webkit-touch-callout: none;
+  }
+  
+  #menuToggle label {
+    position: relative;
+    display: block;
+    width: 30px;
+    height: 30px;
+  }
+  #menuToggle label span {
+    display: none;
+  }
+  #menuToggle label div {
+    display: block;
+    width: 30px;
+    height: 2px;
+    margin-bottom: 6px;
+    position: relative;
+    background: rgb(43, 43, 92);
+    border-radius: 3px;  
+    z-index: 1;  
+
+  }
+  #menu {
+    position: absolute;
+    list-style-type: none;
+    margin: -5px 0 0 -50px;
+    width: 200px;
+    padding: 50px;
+    background: #fff;
+    left: -100lvh;
+  }
+  
+  #menu li {
+    padding: 10px;
+    font-size: 24px;
+  }
+  #menuToggle input:checked ~ ul {
+    left: 0;
+  }
+ 
+ .heading {
+     background-color: rgb(10, 9, 9);
+     padding: 10px 5px;
+     color: white;
+     font-size: 15px;
+ }
+ 
+ nav {
+     grid-area: topnav;
+     padding: 0 15px;
+ }
+ 
+ #about {
+     grid-area: aboutme;
+     padding: 15px;
+ }
+ .about_img_container{
+    padding-top: 15px;
+ }
+ .about_img_container img{
+    height: 15rem;
+    width: 15rem;
+ }
+ #info {
+     grid-area: info;
+     padding: 15px;
+ }
+ #info p {
+    margin: 0;
+    padding-top: 15px;
+    line-height: 25px;
+ }
+ 
+ #papers {
+     grid-area: papers;
+     padding: 15px;
+ }
+ 
+ #hobbies {
+     grid-area: hobbies;
+     padding: 15px;
+ }
+ 
+ #blogs {
+     grid-area: blogs;
+     padding: 15px;
+ }
+
+ #blogs ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 0;
+ }
+
+ .papers_container{
+    display: flex;
+    gap: 15px;
+    padding: 15px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+ }
+
+ .paper{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 15px;
+    color: #fff;
+    width: 200px;
+    height: 250px;
+    border-radius: 10px;
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK7FHFJDYDeJBvpUXgK-osoMYDbPr623plcQ&usqp=CAU);
+    background-color: #fff;
+    box-shadow: rgb(14 30 37 / 12%) 0px 2px 4px 0px, rgb(14 30 37 / 32%) 0px 2px 16px 0px;
+ }
+
+ .paper a {
+    color: #fff;
+    margin-top: 10px;
+ }
+
+ .paper h2 {
+    margin-bottom: 0;
+ }
+.blog{
+    border-radius: 10px;
+    padding: 15px;
+    width: 250px;
+    background-color: #fff;
+    box-shadow: rgb(14 30 37 / 12%) 0px 2px 4px 0px, rgb(14 30 37 / 32%) 0px 2px 16px 0px;
+}
+
+.blog a {
+    float: right;
+}
+.blogs_container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 15px 0;
+    justify-content: space-between;
+}
+
+#contact {
+    grid-area: contact;
+    background-color: darkgrey;
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+}
+#contact h3{
+    margin-top: 0;
+}
+.contact_links a {
+    padding: 10px;
+    text-decoration: none;
+}
+
+ @media screen and (max-width:900px) {
+     .container {
+         grid-template-columns: 1fr;
+         gap: 0.2em;
+         grid-template-areas: 
+         "topnav" 
+         "aboutme" 
+         "info" 
+         "experience"
+         "papers" 
+         "hobbies" 
+         "blogs"
+         "contact";
+     }
+ }
+ 
+ @media screen and (max-width: 600px) {
+    .blog{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .paper{
+        width: 100%;
+    }
+}
